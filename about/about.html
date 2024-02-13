@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>  
+</head>
+<body>
+
+<!-- Include Navbar -->
+    <div id="navbar-container"></div>
+    <script src="https://kit.fontawesome.com/37df75b44e.js" crossorigin="anonymous"></script>
+    <script>
+        // Function to load an external script
+        function loadScript(url, callback){
+            var script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.src = url;
+            script.onload = callback;
+            document.head.appendChild(script);
+        }
+
+        // Function to load navbar content
+        function loadNavbarContent() {
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', '../navbar/navbar.html', true);
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    if (xhr.status === 200) {
+                        // Append the navbar content to the container
+                        document.getElementById('navbar-container').innerHTML = xhr.responseText;
+                        // Load the navbar.js script after the content is appended
+                        loadScript('../navbar/navbar.js', function() {
+                            // Navbar.js is now loaded, you can execute any additional logic if needed
+                        });
+                    } else {
+                        console.error('Failed to load navbar.html');
+                    }
+                }
+            };
+            xhr.send();
+        }
+
+        // Load navbar content
+        loadNavbarContent();
+
+    </script>
+
+
+
+</body>
+</html>

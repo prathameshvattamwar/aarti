@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Marathi&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Croissant+One&family=Inter&family=Poppins:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Inter&family=Poppins:wght@300;400;600&display=swap');
+/* font-family: 'Tiro Devanagari Marathi', serif; */
+/* font-family: 'Croissant One', cursive; */
+/* font-family: 'Poppins', sans-serif; */
+
+*{
+    font-size: 62.5%;
+}
+#navbar-container {
+    position: relative;
+    height: 50px;
+    width: 100%;
+}
+
+#page1 {
+    position: absolute;
+    top: 10rem; 
+    left: 0;
+    width: 100%;
+    height: auto;
+    background-color: #fff; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#page1 .top-content{
+    display: flex;
+    height: 10rem;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column; 
+    line-height: 4rem;
+}
+
+#page1 .top-content h1 {
+    font-size: 3rem; 
+    font-family: 'Croissant One', cursive;
+    text-transform: uppercase;
+}
+
+#page1 .top-content h2{
+    color: gray;
+    font-size: 2rem;
+    font-family: 'Tiro Devanagari Marathi';
+}
+
+
+/* ---------------------------- About God ------------------------- */
+
+#page1 .about-god{
+    display: flex;
+    width: 92%;
+    margin-top: 3%;
+}
+
+#page1 .about-god div{
+    padding: 0 3%;
+}
+
+#page1 .about-god .god-img{
+    width: 30%;
+    border-radius: 5px;
+    /* overflow: hidden; */
+}
+
+#page1 .about-god .god-img img{
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .5s;
+}
+
+#page1 .about-god .god-img img:hover{
+    transform: translateY(-10px) translateX(8px);
+    box-shadow: -12px 12px 5px #000;
+}
+
+#page1 .about-god .god-desc{
+    width: 70%;
+}
+
+#page1 .about-god .god-desc h1{
+    text-align: justify;
+    font-size: 2rem;
+    font-family: 'Tiro Devanagari Marathi';
+    margin-bottom: 1rem;
+}
+
+#page1 .about-god .god-desc p,#page1 .about-god .god-desc p span{
+    text-align: justify;
+    color: gray;
+    font-size: 1.8rem;
+    font-family: 'Tiro Devanagari Marathi';
+}
+
+#page1 .about-god .god-desc p span{
+    color: rgb(108, 108, 108);
+    text-decoration: double;
+}
+
+/* ------------------------------ Aarti Section ----------------------------- */
+
+#page1 .god-aarti{
+    margin: 5rem auto 10rem auto;
+    text-align: center;
+}
+
+#page1 .god-aarti .aarti .heading{
+    font-size: 3rem;
+    margin-bottom: .8rem;
+    font-family: 'Tiro Devanagari Marathi';
+}
+
+#page1 .god-aarti .aarti .lang{
+    color: gray;
+    font-size: 2rem;
+    font-family: 'Tiro Devanagari Marathi';
+}
+
+#page1 .god-aarti .aarti .descript{
+    margin-top: 2rem;
+    font-size: 2rem;
+    font-family: 'Tiro Devanagari Marathi';
+}
+
+#page1 .god-aarti .aarti-english .descript{
+    font-size: 2rem;
+}
+
+/* --------------------------------- audio ------------------------------------ */
+
+.mp3{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.audio {
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto;
+    border: 2px solid #3498db;
+    border-radius: 10px;
+    padding: 1rem 6rem;
+    background-color: #f0f0f0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5rem;
+}
+
+audio {
+    width: 100%;
+}
+
+.play-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #3498db;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    transform: translateX(-5rem);
+}
+
+.play-button:hover {
+    background-color: #2980b9;
+}
+
+.download-button {
+    background-color: #2ecc71;
+    color: #fff;
+    border: none;
+    transform: translateX(5rem);
+    font-size: 1rem;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.download-button:hover {
+    background-color: #27ae60;
+}
+
+#time-control {
+    width: calc(100% - 120px); /* Adjust width as needed */
+}
+
+
+
+/* ----------------------------- Responsive part ------------------------------- */
+
+@media (max-width:700px) {
+    #page1 .top-content{
+        line-height: 3rem;
+    }
+    #page1 .top-content h1{
+        font-size: 2rem;
+    }  
+    #page1 .top-content h2{
+        font-size: 1.8rem;
+    }
+
+    #page1 .about-god{
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        padding: 5%;
+    }
+    #page1 .about-god .god-img{
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+    #page1 .about-god .god-desc{
+        width: 100%;
+    }
+    #page1 .about-god .god-desc h1{
+        width: 100%;
+        text-align: center;
+    }
+    #page1 .about-god .god-desc p{
+        text-align: justify;
+        font-size: 1.6rem;
+    }
+    #page1 .god-aarti .aarti-english .descript{
+        font-size: 1.5rem;
+    }
+
+    .audio{
+        width: 80%;
+    }
+}

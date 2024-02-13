@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="contact.css">
+    <link href="https://fonts.googleapis.com/css2?family=Acme&family=Inter&family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Include Navbar -->
+    <div id="navbar-container"></div>
+
+    <div class="contact">
+        <div class="wrapper">
+            <div class="contact-left">
+                <h1>Contact me</h1>
+                <p><i class="fa-solid fa-envelope"></i> prathamesh.vattamwar24@gmail.com</p>
+                    <p><i class="fa-solid fa-mobile-screen-button"></i> +91 9271981229</p>
+
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/prathamesh-vattamwar-483529227/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://github.com/prathameshvattamwar" target="_blank"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://www.instagram.com/prathameshpv24/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://twitter.com/prathameshv24" target="_blank"><i class="fa-brands fa-square-x-twitter"></i></a>
+                    </div>
+            </div>
+            <div class="contact-right">
+    
+            </div>
+        </div>
+    </div>
+
+    
+    <script src="https://kit.fontawesome.com/37df75b44e.js" crossorigin="anonymous"></script>
+    <script>
+        // Function to load an external script
+        function loadScript(url, callback){
+            var script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.src = url;
+            script.onload = callback;
+            document.head.appendChild(script);
+        }
+
+        // Function to load navbar content
+        function loadNavbarContent() {
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', '../navbar/navbar.html', true);
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    if (xhr.status === 200) {
+                        // Append the navbar content to the container
+                        document.getElementById('navbar-container').innerHTML = xhr.responseText;
+                        // Load the navbar.js script after the content is appended
+                        loadScript('../navbar/navbar.js', function() {
+                            // Navbar.js is now loaded, you can execute any additional logic if needed
+                        });
+                    } else {
+                        console.error('Failed to load navbar.html');
+                    }
+                }
+            };
+            xhr.send();
+        }
+
+        // Load navbar content
+        loadNavbarContent();
+
+    </script>
+
+
+
+</body>
+</html>
